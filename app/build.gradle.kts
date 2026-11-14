@@ -27,13 +27,13 @@ require(
 }
 
 android {
-    namespace = "com.bitchat.android"
+    namespace = "com.toothchat.android"
     compileSdk = libs.versions.compileSdk.get().toInt()
     buildToolsVersion = libs.versions.buildTools.get()
     if (releaseUiTests) testBuildType = "release"
 
     defaultConfig {
-        applicationId = "com.bitchat.droid"
+        applicationId = "com.toothchat.app"
         minSdk = libs.versions.minSdk.get().toInt()
         targetSdk = libs.versions.targetSdk.get().toInt()
         versionCode = 42
@@ -45,11 +45,11 @@ android {
         )
 
         testInstrumentationRunner = if (composerUiTests) {
-            "com.bitchat.android.ui.ComposerPanicTestRunner"
+            "com.toothchat.android.ui.ComposerPanicTestRunner"
         } else if (releaseUiTests) {
-            "com.bitchat.android.ui.ReleaseScannerTestRunner"
+            "com.toothchat.android.ui.ReleaseScannerTestRunner"
         } else {
-            "com.bitchat.android.ui.PerformanceTestRunner"
+            "com.toothchat.android.ui.PerformanceTestRunner"
         }
         vectorDrawables {
             useSupportLibrary = true
